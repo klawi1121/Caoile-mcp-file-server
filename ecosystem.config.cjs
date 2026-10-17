@@ -1,19 +1,15 @@
 module.exports = {
   apps: [
     {
-      name: "caoile-mcp-server",
+      name: "caoile-server",
       script: "dist/index.js",
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: "300M",
-      env: {
-        NODE_ENV: "production",
-        PORT: 3000,
-        HOST: "0.0.0.0",
-        WORKSPACE_ROOT: "./workspace",
-        AUTH_TOKEN: "",
-      },
+      cwd: "C:\\Users\\Quennie\\Documents\\3rd year\\CSE2\\MCP\\Caoile-mcp-file-server"
     },
-  ],
+    {
+      name: "caoile-tunnel",
+      script: "C:\\Users\\Quennie\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Ngrok.Ngrok_Microsoft.Winget.Source_8wekyb3d8bbwe\\ngrok.exe",
+      args: "http --url=retiree-buzz-duckbill.ngrok-free.dev 3000",
+      interpreter: "none"
+    }
+  ]
 };
